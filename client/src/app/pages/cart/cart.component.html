@@ -1,0 +1,23 @@
+<div class="container mx-auto mt-10">
+  <h2 class="text-3xl font-bold">Shopping Cart</h2>
+  <div *ngIf="cartService.cartItems().length > 0; else emptyCart">
+    <div *ngFor="let item of cartService.cartItems()" class="flex items-center mt-4 border-b pb-4">
+      <img [src]="item.image" [alt]="item.title" class="w-20 h-20 object-cover">
+      <div class="ml-4">
+        <p class="font-bold">{{ item.title }}</p>
+        <p>{{ item.price }}</p>
+      </div>
+      <div class="ml-auto">
+        <button (click)="removeFromCart(item)" class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
+          Remove
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-end mt-4">
+      <p class="text-xl font-bold">Total: {{cartService.totalPrice() | currency}}</p>
+    </div>
+  </div>
+  <ng-template #emptyCart>
+    <p class="mt-4">Your cart is currently empty.</p>
+  </ng-template>
+</div>

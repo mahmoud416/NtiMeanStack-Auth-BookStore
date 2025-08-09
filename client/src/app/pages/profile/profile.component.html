@@ -1,0 +1,13 @@
+<div class="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow text-center">
+  <h2 class="text-2xl font-bold mb-4">Profile</h2>
+  <ng-container *ngIf="user; else noUser">
+    <img [src]="user.profileImage || 'https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png'" alt="Avatar" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-purple-400">
+    <div class="mb-1 text-lg font-semibold">{{user.username}}</div>
+    <div class="mb-4 text-gray-600">{{user.email}}</div>
+    <div class="mb-2">First Name: <span class="font-semibold">{{user.firstName || 'N/A'}}</span></div>
+    <div class="mb-2">Last Name: <span class="font-semibold">{{user.lastName || 'N/A'}}</span></div>
+  </ng-container>
+  <ng-template #noUser>
+    <div class="text-red-600">No user info found.</div>
+  </ng-template>
+</div>

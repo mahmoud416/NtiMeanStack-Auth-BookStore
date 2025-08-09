@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Client</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <app-root></app-root>
+  <script>
+    // Change directory to the API folder
+    const { exec } = require('child_process');
+    exec('cd "c:\\Users\\mahmo\\Downloads\\MeanStack-Auth-BookStore-main\\MeanStack-Auth-BookStore-main\\api" && npm start', (err, stdout, stderr) => {
+      if (err) {
+        console.error(`Error changing directory or starting the application: ${err}`);
+        return;
+      }
+      console.log(`Changed directory and started the application: ${stdout}`);
+    });
+  </script>
+</body>
+</html>

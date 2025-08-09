@@ -1,0 +1,32 @@
+<div class="container mx-auto mt-10">
+  <h2 class="text-3xl font-bold">Admin Dashboard</h2>
+  <div class="mt-4">
+    <button routerLink="/add-book" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Add Book
+    </button>
+  </div>
+  <div class="mt-4 flex justify-between items-center">
+    <h3 class="text-2xl font-bold">Books ({{books.length}})</h3>
+    <div>
+      <button (click)="isListView = false" class="mr-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        Grid
+      </button>
+      <button (click)="isListView = true" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+        List
+      </button>
+    </div>
+  </div>
+  <div class="mt-4">
+    <div [ngClass]="{'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4': !isListView}">
+      <div *ngFor="let book of books" [ngClass]="{'border p-4 rounded': !isListView, 'flex items-center border-b py-2': isListView}">
+        <img [src]="book.image" [alt]="book.title" [ngClass]="{'w-full h-48 object-cover mb-4': !isListView, 'w-20 h-20 object-cover': isListView}">
+        <div [ngClass]="{'ml-4': isListView}">
+          <h4 class="font-bold">{{book.title}}</h4>
+          <button (click)="deleteBook(book._id)" class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
