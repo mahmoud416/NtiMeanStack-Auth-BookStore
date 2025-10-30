@@ -43,9 +43,7 @@ The project is organized into two main parts:
 - `README.md` - Project documentation (this file)
 - `package.json` - Root package configuration
 
-  Installation & Setup
-markdown
-## ⚙️ Installation & Setup
+  ## ⚙️ Installation & Setup
 
 ### Prerequisites
 - Node.js (version 14 or higher)
@@ -53,31 +51,8 @@ markdown
 - MongoDB (local or cloud)
 
 ### 1. Clone the Repository
+```bash
 git clone https://github.com/mahmoud416/NtiMeanStack-Auth-BookStore.git
+
 cd NtiMeanStack-Auth-BookStore
-2. Backend Setup
-
-# Navigate to backend directory
-cd api
-
-# Install dependencies
-npm install
-
-# Create environment file
-# Add your MONGODB_URI and JWT_SECRET in .env file
-
-# Start the backend server
-npm start
-Backend will run on: http://localhost:3000
-
-3. Frontend Setup
-   
-# Navigate to frontend directory
-cd client
-
-# Install dependencies
-npm install
-
-# Start the Angular development server
-ng serve
 Frontend will run on: http://localhost:4200
