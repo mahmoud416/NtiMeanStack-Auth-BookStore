@@ -20,17 +20,25 @@ A robust and secure full-stack Bookstore application built with the MEAN stack (
 - **Package Management**: npm
 
 ## 📁 Project Structure
-├── client/ # Angular application
+NtiMeanStack-Auth-BookStore/
+├── client/ # Angular Frontend
 │ ├── src/
+│ │ ├── app/
+│ │ │ ├── components/
+│ │ │ ├── services/
+│ │ │ └── models/
+│ │ ├── assets/
+│ │ └── environments/
 │ ├── public/
-│ └── angular.json
-├── api/ # Node.js & Express application
+│ └── package.json
+├── api/ # Node.js Backend
 │ ├── controllers/
 │ ├── models/
 │ ├── routes/
 │ ├── middleware/
-│ └── server.js
-├── package.json
+│ ├── config/
+│ ├── utils/
+│ └── package.json
 └── README.md
 
 
